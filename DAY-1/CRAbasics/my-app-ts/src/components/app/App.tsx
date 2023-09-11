@@ -27,10 +27,38 @@ class App extends React.Component {
       imageUrl:
         "https://grammarist.com/wp-content/uploads/Grammarist-Featured-Image-V7-2023-02-12T210904.857.png",
     },
+    {
+      msg: "Hey",
+      from: "Joe",
+      to: "Lim",
+      imageUrl:
+        "https://grammarist.com/wp-content/uploads/Grammarist-Featured-Image-V7-2023-02-12T210904.857.png",
+    },
+    {
+      msg: "Hey",
+      from: "Joe",
+      to: "Lim",
+      imageUrl:
+        "https://grammarist.com/wp-content/uploads/Grammarist-Featured-Image-V7-2023-02-12T210904.857.png",
+    },
+    {
+      msg: "Hey",
+      from: "Joe",
+      to: "Lim",
+      imageUrl:
+        "https://grammarist.com/wp-content/uploads/Grammarist-Featured-Image-V7-2023-02-12T210904.857.png",
+    },
+    {
+      msg: "Hey",
+      from: "Joe",
+      to: "Lim",
+      imageUrl:
+        "https://grammarist.com/wp-content/uploads/Grammarist-Featured-Image-V7-2023-02-12T210904.857.png",
+    },
   ];
   render() {
     return (
-      <div style={{ display: "flex" }}>
+      <div className="row">
         {this.messages.map((message: MessageModel) => (
           <Message messageDetails={message} />
         ))}
