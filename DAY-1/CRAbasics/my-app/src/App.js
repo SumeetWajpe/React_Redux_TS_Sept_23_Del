@@ -7,9 +7,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Message />
-        <Message />
-        <Message />
+        <Message msg="Hello" />
+        <Message msg="Hi" />
+        <Message msg="Hey" />
       </div>
     );
   }
