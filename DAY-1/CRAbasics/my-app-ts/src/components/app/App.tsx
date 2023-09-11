@@ -2,9 +2,10 @@ import logo from "./logo.svg";
 import "./App.css";
 import React from "react";
 import { Message } from "../message/message";
+import { MessageModel } from "../../models/message.models";
 
 class App extends React.Component {
-  messages = [
+  messages: MessageModel[] = [
     {
       msg: "Hello",
       from: "Joe",
@@ -30,7 +31,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        {this.messages.map(message => (
+        {this.messages.map((message: MessageModel) => (
           <Message messageDetails={message} />
         ))}
       </div>

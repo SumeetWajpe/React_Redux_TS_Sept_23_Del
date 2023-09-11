@@ -1,12 +1,8 @@
 import React from "react";
+import { MessageModel } from "../../models/message.models";
 
 type MessageProps = {
-  messageDetails: {
-    msg: string;
-    to: string;
-    from: string;
-    imageUrl: string;
-  };
+  messageDetails: MessageModel;
 };
 
 export class Message extends React.Component<MessageProps> {
