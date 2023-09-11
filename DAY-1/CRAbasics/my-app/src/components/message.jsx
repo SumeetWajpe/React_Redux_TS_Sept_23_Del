@@ -5,7 +5,7 @@ export class Message extends React.Component {
     return (
       <div>
         <img
-          src={this.props.messagedetails.imageUrl}
+          src={this.props.messagedetails.imageurl}
           alt={this.props.messagedetails.msg}
           height="200px"
           width="300px"
