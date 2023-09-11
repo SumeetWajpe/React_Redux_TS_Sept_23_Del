@@ -25,12 +25,12 @@ class App extends React.Component {
       from: "Joe",
       to: "Lim",
       imageUrl:
-        "https://cdn2.vectorstock.com/i/1000x1000/59/56/hey-comic-word-vector-15865956.jpg",
+        "https://grammarist.com/wp-content/uploads/Grammarist-Featured-Image-V7-2023-02-12T210904.857.png",
     },
   ];
   render() {
     return (
-      <div>
+      <div style={{ display: "flex" }}>
         {this.messages.map((message: MessageModel) => (
           <Message messageDetails={message} />
         ))}

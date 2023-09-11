@@ -1,0 +1,7 @@
+.msg-card{
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px;
+    width: 300px;
+}
