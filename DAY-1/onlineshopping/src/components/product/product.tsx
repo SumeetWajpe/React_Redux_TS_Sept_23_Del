@@ -19,10 +19,17 @@ export default class Product extends Component<ProductProps> {
           />
           <div className="card-body">
             <h5 className="card-title">{this.props.productdetails.title}</h5>
-            <p className="card-text">{this.props.productdetails.price}</p>
+            <p className="card-text">₹.{this.props.productdetails.price}</p>
 
-            <p className="card-text">{this.props.productdetails.rating}</p>
-            <p className="card-text"> {this.props.productdetails.likes}</p>
+            {/* <p className="card-text">{this.props.productdetails.rating}</p> */}
+            <p className="card-text">
+              <i className="fa-solid fa-star" style={{ color: "orange" }}></i>
+            </p>
+
+            <button className="btn btn-primary">
+              {this.props.productdetails.likes}{" "}
+              <i className="fa-solid fa-thumbs-up"></i>
+            </button>
           </div>
         </div>
       </div>
