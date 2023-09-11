@@ -7,6 +7,12 @@ type ProductProps = {
 
 export default class Product extends Component<ProductProps> {
   render() {
+    let ratings = [];
+    for (let index = 0; index < this.props.productdetails.rating; index++) {
+      ratings.push(
+        <i className="fa-solid fa-star" style={{ color: "orange" }}></i>,
+      );
+    }
     return (
       <div className="col-md-3">
         <div className="card p-2 m-2">
@@ -19,12 +25,11 @@ export default class Product extends Component<ProductProps> {
           />
           <div className="card-body">
             <h5 className="card-title">{this.props.productdetails.title}</h5>
+            <p className="card-text">{ratings}</p>
+
             <p className="card-text">₹.{this.props.productdetails.price}</p>
 
             {/* <p className="card-text">{this.props.productdetails.rating}</p> */}
-            <p className="card-text">
-              <i className="fa-solid fa-star" style={{ color: "orange" }}></i>
-            </p>
 
             <button className="btn btn-primary">
               {this.props.productdetails.likes}{" "}
