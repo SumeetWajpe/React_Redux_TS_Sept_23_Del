@@ -45,11 +45,18 @@ export default class ListOfProducts extends Component {
       "https://i0.wp.com/www.alphr.com/wp-content/uploads/2022/05/What-Is-the-Newest-JBL-Speaker-Out-Now.png?fit=935%2C523&ssl=1",
     ),
   ];
+
+  DeleteAProduct() {
+    console.log("Deleting..");
+  }
   render() {
     return (
       <div className="row">
         {this.products.map((product: ProductModel) => (
-          <Product productdetails={product} />
+          <Product
+            productdetails={product}
+            DeleteAProduct={() => this.DeleteAProduct()}
+          />
         ))}
       </div>
     );
