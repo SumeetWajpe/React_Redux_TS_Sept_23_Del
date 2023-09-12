@@ -8,7 +8,12 @@ class App extends React.Component {
   render() {
     // return <ListOfProducts />;
     // return <Posts />;
-    return <Message />;
+    return (
+      <>
+        <Message msg="Hey" />
+        <Message msg="Hi" />
+      </>
+    );
   }
 }
 
