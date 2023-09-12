@@ -15,10 +15,7 @@ export default class Product extends Component<ProductProps> {
     // this.state.currLikes++; // State is immutable
     this.setState({ currLikes: this.state.currLikes + 1 });
   }
-  componentWillUnmount(): void {
-    // clean up
-    console.log("componentWillUnmount - Product");
-  }
+
   render() {
     return (
       <div className="col-md-3">

@@ -9,7 +9,7 @@ export default class Rating extends Component<RatingProps> {
   render() {
     let ratings = [];
     for (let index = 0; index < this.props.starscount; index++) {
-      ratings.push(<Icon />);
+      ratings.push(<Icon key={index} />);
     }
     return <>{ratings}</>;
   }
