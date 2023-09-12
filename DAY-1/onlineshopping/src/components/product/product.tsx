@@ -4,7 +4,7 @@ import Rating from "../molecules/rating/rating";
 
 type ProductProps = {
   productdetails: ProductModel;
-  DeleteAProduct: () => void;
+  DeleteAProduct: (id: number) => void;
 };
 
 export default class Product extends Component<ProductProps> {
@@ -46,7 +46,9 @@ export default class Product extends Component<ProductProps> {
             </button>
             <button
               className="btn btn-danger mx-1"
-              onClick={() => this.props.DeleteAProduct()}
+              onClick={() =>
+                this.props.DeleteAProduct(this.props.productdetails.id)
+              }
             >
               <i className="fa-solid fa-trash"></i>
             </button>

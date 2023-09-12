@@ -46,8 +46,8 @@ export default class ListOfProducts extends Component {
     ),
   ];
 
-  DeleteAProduct() {
-    console.log("Deleting..");
+  DeleteAProduct(id: number) {
+    console.log("Deleting..", id);
   }
   render() {
     return (
@@ -55,7 +55,7 @@ export default class ListOfProducts extends Component {
         {this.products.map((product: ProductModel) => (
           <Product
             productdetails={product}
-            DeleteAProduct={() => this.DeleteAProduct()}
+            DeleteAProduct={(id: number) => this.DeleteAProduct(id)}
           />
         ))}
       </div>
