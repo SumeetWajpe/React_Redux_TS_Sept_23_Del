@@ -11,6 +11,6 @@ export default class Rating extends Component<RatingProps> {
     for (let index = 0; index < this.props.starscount; index++) {
       ratings.push(<Icon />);
     }
-    return <div>{ratings}</div>;
+    return <>{ratings}</>;
   }
 }

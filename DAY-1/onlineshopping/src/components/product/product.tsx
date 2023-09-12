@@ -7,6 +7,11 @@ type ProductProps = {
 };
 
 export default class Product extends Component<ProductProps> {
+  state = { currLikes: 500 };
+  incrementLikes() {
+    console.log("++");
+    //this.props.productdetails.likes++; // Props are readonly
+  }
   render() {
     return (
       <div className="col-md-3">
@@ -28,8 +33,12 @@ export default class Product extends Component<ProductProps> {
 
             {/* <p className="card-text">{this.props.productdetails.rating}</p> */}
 
-            <button className="btn btn-primary">
-              {this.props.productdetails.likes}{" "}
+            <button
+              className="btn btn-primary"
+              onClick={() => this.incrementLikes()}
+            >
+              {/* {this.props.productdetails.likes}{" "} */}
+              {this.state.currLikes}
               <i className="fa-solid fa-thumbs-up"></i>
             </button>
           </div>
