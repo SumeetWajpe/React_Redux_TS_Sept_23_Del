@@ -19,9 +19,11 @@ export default class Posts extends Component<{}, PostsState> {
           <h1>All Posts</h1>
         </header>
         <main>
-          <ul>
+          <ul className="list-group">
             {this.state.posts.map(post => (
-              <li key={post.id}>{post.title}</li>
+              <li key={post.id} className="list-group-item">
+                {post.title}
+              </li>
             ))}
           </ul>
         </main>
