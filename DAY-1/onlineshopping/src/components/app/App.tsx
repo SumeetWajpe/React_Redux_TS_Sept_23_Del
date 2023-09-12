@@ -2,19 +2,15 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import ListOfProducts from "../listofproducts/listofproducts";
 import Posts from "../posts/posts";
-import { Message } from "../functional/functional.message";
+import Counter from "../functional/counter";
 
-class App extends React.Component {
-  render() {
-    // return <ListOfProducts />;
-    // return <Posts />;
-    return (
-      <>
-        <Message msg="Hey" />
-        <Message msg="Hi" />
-      </>
-    );
-  }
-}
+const App: React.FC = () => {
+  return (
+    <>
+      <Counter />
+      {/* <ListOfProducts /> */}
+    </>
+  );
+};
 
 export default App;
