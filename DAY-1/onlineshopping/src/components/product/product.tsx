@@ -11,6 +11,8 @@ export default class Product extends Component<ProductProps> {
   incrementLikes() {
     console.log("++");
     //this.props.productdetails.likes++; // Props are readonly
+    // this.state.currLikes++; // State is immutable
+    this.setState({ currLikes: this.state.currLikes + 1 });
   }
   render() {
     return (
