@@ -7,7 +7,7 @@ type ProductProps = {
 };
 
 export default class Product extends Component<ProductProps> {
-  state = { currLikes: 500 };
+  state = { currLikes: this.props.productdetails.likes };
   incrementLikes() {
     console.log("++");
     //this.props.productdetails.likes++; // Props are readonly
