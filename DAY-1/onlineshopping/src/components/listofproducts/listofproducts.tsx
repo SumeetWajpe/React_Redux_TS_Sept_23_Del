@@ -48,12 +48,26 @@ export default class ListOfProducts extends Component {
     ],
   };
 
+  componentDidMount(): void {
+    console.log("componentDidMount");
+  }
+
+  shouldComponentUpdate(): boolean {
+    return true;
+  }
+
+  componentDidUpdate(): void {
+    console.log("componentDidUpdate");
+  }
+
   DeleteAProduct(id: number) {
     console.log("Deleting..", id);
     let newProductList = this.state.products.filter(p => p.id !== id);
     this.setState({ products: newProductList });
   }
+
   render() {
+    console.log("Render..");
     return (
       <div className="row">
         {this.state.products.map((product: ProductModel) => (
