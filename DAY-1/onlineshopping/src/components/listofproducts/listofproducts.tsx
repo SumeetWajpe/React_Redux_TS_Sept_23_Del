@@ -3,7 +3,7 @@ import { ProductModel } from "../../models/product.model";
 import Product from "../product/product";
 
 const ListOfProduct: React.FC = () => {
-  const [products] = useState([
+  const [products] = useState<ProductModel[]>([
     new ProductModel(
       1,
       "Mac Book Pro",

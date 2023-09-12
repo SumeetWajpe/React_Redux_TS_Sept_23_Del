@@ -7,7 +7,9 @@ type ProductProps = {
 };
 
 const Product: React.FC<ProductProps> = (props: ProductProps) => {
-  const [currLikes, setCurrLikes] = useState(props.productdetails.likes);
+  const [currLikes, setCurrLikes] = useState<number>(
+    props.productdetails.likes,
+  );
   return (
     <>
       <div className="col-md-3">
