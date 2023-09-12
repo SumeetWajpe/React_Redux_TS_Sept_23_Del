@@ -4,7 +4,6 @@ import Rating from "../molecules/rating/rating";
 
 type ProductProps = {
   productdetails: ProductModel;
-  DeleteAProduct: (id: number) => void;
 };
 
 const Product: React.FC<ProductProps> = (props: ProductProps) => {
