@@ -15,7 +15,7 @@ const Product: React.FC<ProductProps> = (props: ProductProps) => {
     <>
       <div className="col-md-3">
         <div className="card p-2 m-2">
-          <Link to="/productdetails">
+          <Link to={"/productdetails/" + props.productdetails.id}>
             <img
               src={props.productdetails.imageUrl}
               className="card-img-top"
