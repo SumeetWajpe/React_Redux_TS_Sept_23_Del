@@ -6,9 +6,7 @@ type NewProductProps = {
 };
 
 export default function NewProduct(props: NewProductProps) {
-  const [newProduct, setNewProduct] = useState(
-    new ProductModel(0, "", 0, 0, 0, ""),
-  );
+  const [newProduct, setNewProduct] = useState(new ProductModel());
   return (
     <>
       <div>

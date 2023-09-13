@@ -44,6 +44,23 @@
       "likes": 400,
       "imageUrl": "https://i0.wp.com/www.alphr.com/wp-content/uploads/2022/05/What-Is-the-Newest-JBL-Speaker-Out-Now.png?fit=935%2C523&ssl=1",
       "description": "MacBook Pro. Our most powerful notebooks. Fast M1 processors, incredible graphics, and spectacular Retina displays. Now available in a 14-inch model. MacBook Pro. Our most powerful notebooks. Fast M1 processors, incredible graphics, and spectacular Retina displays. Now available in a 14-inch model."
+    },
+    {
+      "id": "6",
+      "title": "DJI Mavic Pro",
+      "price": "500000",
+      "rating": "5",
+      "likes": "600",
+      "imageUrl": "https://www.geoadithya.com/images/resource/products/Marvic/mavic-pro.jpg"
+    },
+    {
+      "id": "7",
+      "title": "Nikon 7500",
+      "price": "250000",
+      "rating": "4",
+      "likes": "500",
+      "imageUrl": "https://i.ytimg.com/vi/8mirbAxXc20/sddefault.jpg",
+      "description": "Nikon D7500 20.9MP Digital SLR Camera (Black) with AF-S DX NIKKOR 18-140mm f/3.5-5.6G ED VR Lens · Camera. Current Price is . ₹91,990.00 Original List PriceNikon D7500 20.9MP Digital SLR Camera (Black) with AF-S DX NIKKOR 18-140mm f/3.5-5.6G ED VR Lens · Camera. Current Price is . ₹91,990.00 Original List Price"
     }
   ]
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 type NewProductInputs = {
   id: number;
   title: string;
@@ -7,8 +8,10 @@ type NewProductInputs = {
   rating: number;
   likes: number;
   imageUrl: string;
+  description: string;
 };
 export default function NewProductWithRHF() {
+  let navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -21,6 +24,17 @@ export default function NewProductWithRHF() {
         <form
           onSubmit={handleSubmit(newProduct => {
             // fetch api (JSON server)
+            fetch("http://localhost:3500/products", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(newProduct),
+            }).then(res => {
+              if (res.status == 200 || res.status == 201) {
+                navigate("/");
+              }
+            });
           })}
         >
           <div className="row my-1">
@@ -93,6 +107,18 @@ export default function NewProductWithRHF() {
                 type="text"
                 id="txtProductImageUrl"
                 {...register("imageUrl")}
+              />
+            </div>
+          </div>
+          <div className="row my-1">
+            <div className="col-md-4">
+              <label htmlFor="txtProductDescription">Description: </label>
+            </div>
+            <div className="col-md-4">
+              <textarea
+                rows={5}
+                id="txtProductDescription"
+                {...register("description")}
               />
             </div>
           </div>
