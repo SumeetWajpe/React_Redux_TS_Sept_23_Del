@@ -50,9 +50,10 @@ const ListOfProduct: React.FC = () => {
   function AddNewProduct(newProduct: ProductModel) {
     setProducts([...products, newProduct]);
   }
+  console.log(JSON.stringify(products));
+
   return (
     <div className="row">
-     
       {products.map((product: ProductModel) => (
         <Product key={product.id} productdetails={product} />
       ))}
