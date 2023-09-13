@@ -6,11 +6,13 @@ import GetPostById from "../getpostbyid/getpostbyid";
 import InputMessage from "../message/inputMessage";
 import NewProductWithRHF from "../newproduct/newproduct.reacthookform";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import Navbar from "../navbar/navbar";
 const App: React.FC = () => {
   return (
     <BrowserRouter>
       {/* <a href="/">Products</a> | <a href="/posts">Posts</a> */}
-      <Link to="/">Products</Link> | <Link to="/posts">Posts</Link>
+      {/* <Link to="/">Products</Link> | <Link to="/posts">Posts</Link> */}
+      <Navbar />
       <Routes>
         <Route path="/" element={<ListOfProducts />} />
         <Route path="/posts" element={<Posts />} />
