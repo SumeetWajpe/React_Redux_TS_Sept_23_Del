@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ProductModel } from "../../models/product.model";
 import Product from "../product/product";
+import NewProduct from "../newproduct/newproduct";
 
 const ListOfProduct: React.FC = () => {
   const [products] = useState<ProductModel[]>([
@@ -47,6 +48,7 @@ const ListOfProduct: React.FC = () => {
   ]);
   return (
     <div className="row">
+      <NewProduct />
       {products.map((product: ProductModel) => (
         <Product key={product.id} productdetails={product} />
       ))}
