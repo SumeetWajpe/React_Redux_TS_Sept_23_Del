@@ -1,10 +1,10 @@
 import React from "react";
 
-export default function ProductDetails() {
+export default function PostDetails() {
   return (
     <div>
       <header>
-        <h1>Product Details</h1>
+        <h1>Post Details</h1>
       </header>
     </div>
   );

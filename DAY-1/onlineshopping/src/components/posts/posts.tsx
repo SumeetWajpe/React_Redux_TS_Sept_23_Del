@@ -1,5 +1,6 @@
 import React, { Component, useEffect, useState } from "react";
 import { PostModel } from "../../models/postmodel";
+import { Link } from "react-router-dom";
 
 type PostsState = {
   posts: PostModel[];
@@ -23,7 +24,7 @@ const Posts: React.FC = () => {
           <ul className="list-group">
             {posts.map((post: PostModel) => (
               <li key={post.id} className="list-group-item">
-                {post.title}
+                <Link to={`/postdetails/${post.id}`}> {post.title}</Link>
               </li>
             ))}
           </ul>

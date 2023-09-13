@@ -8,6 +8,7 @@ import NewProductWithRHF from "../newproduct/newproduct.reacthookform";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Navbar from "../navbar/navbar";
 import ProductDetails from "../productdetails/productdetails";
+import PostDetails from "../postdetails/postdetails";
 const App: React.FC = () => {
   return (
     <BrowserRouter>
@@ -17,6 +18,7 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<ListOfProducts />} />
         <Route path="/posts" element={<Posts />} />
+        <Route path="/postdetails/:id" element={<PostDetails />} />
         <Route path="/newproduct" element={<NewProductWithRHF />} />
         <Route path="/productdetails" element={<ProductDetails />} />
       </Routes>
