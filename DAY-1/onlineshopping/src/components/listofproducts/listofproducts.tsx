@@ -7,13 +7,18 @@ const ListOfProduct: React.FC = () => {
   const [products, setProducts] = useState<ProductModel[]>([]);
 
   useEffect(() => {
-    fetch("http://localhost:3500/products")
-      .then(res => {
-        if (res.ok) {
-          return res.json();
-        }
-      })
-      .then(products => setProducts(products));
+    // fetch("http://localhost:3500/products")
+    //   .then(res => {
+    //     if (res.ok) {
+    //       return res.json();
+    //     }
+    //   })
+    //   .then(products => setProducts(products));
+    (async () => {
+      let res = await fetch("http://localhost:3500/products");
+      let products = await res.json();
+      setProducts(products);
+    })();
   }, []);
 
   return (
