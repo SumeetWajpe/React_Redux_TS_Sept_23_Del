@@ -39,6 +39,14 @@
       "rating": 3,
       "likes": 400,
       "imageUrl": "https://i0.wp.com/www.alphr.com/wp-content/uploads/2022/05/What-Is-the-Newest-JBL-Speaker-Out-Now.png?fit=935%2C523&ssl=1"
+    },
+    {
+      "id": 10,
+      "title": "Test",
+      "price": 1000,
+      "rating": 3,
+      "likes": 10,
+      "imageUrl": ""
     }
   ]
 }

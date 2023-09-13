@@ -20,7 +20,7 @@ export default function NewProductWithRHF() {
       <div className="d-flex justify-content-center align-items-center">
         <form
           onSubmit={handleSubmit(newProduct => {
-            console.log(newProduct);
+            // fetch api (JSON server)
           })}
         >
           <div className="row my-1">
