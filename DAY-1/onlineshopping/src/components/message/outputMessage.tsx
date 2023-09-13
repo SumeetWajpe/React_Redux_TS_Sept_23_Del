@@ -4,6 +4,7 @@ type OutputMessageProps = {
 };
 
 export default function OutputMessage(props: OutputMessageProps) {
+  console.log("Output Message");
   return (
     <div>
       <label>{props.message}</label>
