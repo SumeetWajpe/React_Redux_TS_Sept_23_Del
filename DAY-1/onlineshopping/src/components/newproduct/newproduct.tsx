@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { ProductModel } from "../../models/product.model";
 
-export default function NewProduct() {
+type NewProductProps = {
+  AddNewProduct: (newProduct: ProductModel) => void;
+};
+
+export default function NewProduct(props: NewProductProps) {
   const [newProduct, setNewProduct] = useState(
     new ProductModel(0, "", 0, 0, 0, ""),
   );
@@ -13,7 +17,7 @@ export default function NewProduct() {
           <form
             onSubmit={e => {
               e.preventDefault(); // prevent the browser from reloading the page
-              console.log(newProduct);
+              props.AddNewProduct(newProduct);
             }}
           >
             <div className="row my-1">

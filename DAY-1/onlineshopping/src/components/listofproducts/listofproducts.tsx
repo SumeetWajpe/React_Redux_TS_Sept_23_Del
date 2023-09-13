@@ -4,7 +4,7 @@ import Product from "../product/product";
 import NewProduct from "../newproduct/newproduct";
 
 const ListOfProduct: React.FC = () => {
-  const [products] = useState<ProductModel[]>([
+  const [products, setProducts] = useState<ProductModel[]>([
     new ProductModel(
       1,
       "Mac Book Pro",
@@ -46,9 +46,15 @@ const ListOfProduct: React.FC = () => {
       "https://i0.wp.com/www.alphr.com/wp-content/uploads/2022/05/What-Is-the-Newest-JBL-Speaker-Out-Now.png?fit=935%2C523&ssl=1",
     ),
   ]);
+
+  function AddNewProduct(newProduct: ProductModel) {
+    setProducts([...products, newProduct]);
+  }
   return (
     <div className="row">
-      <NewProduct />
+      <NewProduct
+        AddNewProduct={(newProduct: ProductModel) => AddNewProduct(newProduct)}
+      />
       {products.map((product: ProductModel) => (
         <Product key={product.id} productdetails={product} />
       ))}
