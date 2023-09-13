@@ -9,7 +9,11 @@ type NewProductInputs = {
   imageUrl: string;
 };
 export default function NewProductWithRHF() {
-  const { register, handleSubmit } = useForm<NewProductInputs>();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<NewProductInputs>();
   return (
     <div>
       <h1>New Product</h1>
@@ -23,8 +27,17 @@ export default function NewProductWithRHF() {
             <div className="col-md-4">
               <label htmlFor="txtProductId">Id : </label>
             </div>
-            <div className="col-md-4">
-              <input type="number" id="txtProductId" {...register("id")} />
+            <div className="col-md-8">
+              <input
+                type="number"
+                id="txtProductId"
+                {...register("id", { required: true })}
+              />
+              {errors.id ? (
+                <p style={{ color: "red" }}>Id is required !</p>
+              ) : (
+                ""
+              )}
             </div>
           </div>
           <div className="row my-1">
