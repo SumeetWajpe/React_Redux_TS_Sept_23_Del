@@ -52,9 +52,7 @@ const ListOfProduct: React.FC = () => {
   }
   return (
     <div className="row">
-      <NewProduct
-        AddNewProduct={(newProduct: ProductModel) => AddNewProduct(newProduct)}
-      />
+     
       {products.map((product: ProductModel) => (
         <Product key={product.id} productdetails={product} />
       ))}
