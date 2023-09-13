@@ -13,7 +13,7 @@ export default function NewProductWithRHF() {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<NewProductInputs>();
+  } = useForm<NewProductInputs>({ mode: "onChange" });
   return (
     <div>
       <h1>New Product</h1>
