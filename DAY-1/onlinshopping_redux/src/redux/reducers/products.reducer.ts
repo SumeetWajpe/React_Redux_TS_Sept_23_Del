@@ -44,12 +44,16 @@ let initialState = [
   ),
 ];
 
-createSlice({
+const productsSlice = createSlice({
   name: "products",
   initialState,
   reducers: {
     incrementLikes: (store, action) => {
       console.log("Within incrementLikes reducer ! ");
+      return store;
     },
   },
 });
+
+export const { incrementLikes } = productsSlice.actions;
+export default productsSlice.reducer;
