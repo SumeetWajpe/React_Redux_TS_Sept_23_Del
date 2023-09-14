@@ -31,6 +31,10 @@ export default function ProductDetails() {
           <div className="col-md-3 border-start">
             <h2>{theProduct.title}</h2>
             <Rating starscount={theProduct.rating} />
+            <button className="btn btn-primary">
+              {theProduct.likes}
+              <i className="fa-solid fa-thumbs-up"></i>
+            </button>
             <p className="card-text">₹.{theProduct.price}</p>
 
             <div>{theProduct.description}</div>
