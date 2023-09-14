@@ -50,6 +50,7 @@ const productsSlice = createSlice({
   reducers: {
     incrementLikes: (store: ProductModel[], action: PayloadAction<number>) => {
       console.log("Within incrementLikes reducer ! ");
+
       console.log(action);
       return store;
     },
