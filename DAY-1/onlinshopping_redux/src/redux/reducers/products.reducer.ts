@@ -1,7 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { ProductModel } from "../../models/product.model";
 
-let initialState = [
+let initialState: ProductModel[] = [
   new ProductModel(
     1,
     "Mac Book Pro",
@@ -48,8 +48,9 @@ const productsSlice = createSlice({
   name: "products",
   initialState,
   reducers: {
-    incrementLikes: (store, action) => {
+    incrementLikes: (store: ProductModel[], action: PayloadAction<number>) => {
       console.log("Within incrementLikes reducer ! ");
+      console.log(action);
       return store;
     },
   },
