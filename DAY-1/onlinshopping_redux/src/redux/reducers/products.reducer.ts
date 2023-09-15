@@ -13,8 +13,15 @@ const productsSlice = createSlice({
       store[index].likes++; // changing the original object (wrapper with Immer object)
       return store;
     },
+    setAllProducts: (
+      store: ProductModel[],
+      action: PayloadAction<ProductModel[]>,
+    ) => {
+      store = action.payload; // update store with response received from worker saga
+      return store;
+    },
   },
 });
 
-export const { incrementLikes } = productsSlice.actions;
+export const { incrementLikes ,setAllProducts} = productsSlice.actions;
 export default productsSlice.reducer;
