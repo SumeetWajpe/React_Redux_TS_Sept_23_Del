@@ -9,16 +9,23 @@ const ListOfProduct: React.FC = () => {
   let products = useSelector((store: AppState) => store.products);
   let dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch({ type: SagaActions.FETCH_ALL_PRODUCTS });
-  }, []);
+  useEffect(() => {}, []);
 
   return (
-    <div className="row">
-      {products.map((product: ProductModel) => (
-        <Product key={product.id} productdetails={product} />
-      ))}
-    </div>
+    <>
+      <button
+        onClick={() => {
+          dispatch({ type: SagaActions.FETCH_ALL_PRODUCTS });
+        }}
+      >
+        Get All Products
+      </button>
+      <div className="row">
+        {products.map((product: ProductModel) => (
+          <Product key={product.id} productdetails={product} />
+        ))}
+      </div>
+    </>
   );
 };
 
