@@ -2,7 +2,7 @@ import { count } from "console";
 import React, { createContext, useContext, useState } from "react";
 type CounterContextData = {
   count: number;
-  increment: () => void;
+  increment?: () => void;
 };
 
 let CounterContext = createContext<CounterContextData>({
@@ -29,10 +29,14 @@ export default function GrandParent() {
 
 export function Parent() {
   return (
-    <div>
+    <CounterContext.Provider
+      value={{
+        count: 100,
+      }}
+    >
       <Child />
       <AnotherChild />
-    </div>
+    </CounterContext.Provider>
   );
 }
 
@@ -42,7 +46,7 @@ export function Child() {
   return (
     <div>
       <h3>Count : {ctx.count}</h3>
-      <button onClick={() => ctx.increment()}>++</button>
+      <button onClick={() => ctx?.increment?.()}>++</button>
     </div>
   );
 }
