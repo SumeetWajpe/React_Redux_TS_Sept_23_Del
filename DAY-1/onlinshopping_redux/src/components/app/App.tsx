@@ -3,6 +3,7 @@ import ListOfProduct from "../listofproducts/listofproducts";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ProductDetails from "../productdetails/productdetails";
 import Navbar from "../navbar/navbar";
+import Posts from "../posts/posts";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<ListOfProduct />} />
-        {/* <Route path="/posts" element={<Posts />} /> */}
+        <Route path="/posts" element={<Posts />} />
         {/* <Route path="/postdetails/:id" element={<PostDetails />} /> */}
         {/* <Route path="/newproduct" element={<NewProductWithRHF />} /> */}
         <Route path="/productdetails/:id" element={<ProductDetails />} />

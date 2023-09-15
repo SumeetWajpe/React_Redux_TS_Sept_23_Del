@@ -1,10 +1,13 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { PostModel } from "../../models/postmodel";
 
-let initialState: PostModel[] = [
-  { id: 1, title: "Dummy", userId: 1, body: "Dummy" },
-];
+let initialState: PostModel[] = [];
 
+export const fetchposts = createAsyncThunk("posts/fetchallposts", async () => {
+  let res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  let posts = await res.json();
+  return posts;
+});
 const postsSlice = createSlice({
   name: "posts",
   initialState,
@@ -13,6 +16,14 @@ const postsSlice = createSlice({
       console.log("Within deletePost reducer !");
       return store;
     },
+  },
+  extraReducers: builder => {
+    builder.addCase(
+      fetchposts.fulfilled,
+      (store: PostModel[], action: PayloadAction<PostModel[]>) => {
+        return action.payload;
+      },
+    );
   },
 });
 

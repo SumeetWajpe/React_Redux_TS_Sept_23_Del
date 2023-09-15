@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import CartCount from "../cart/cartcount/cartcount";
 
 export default function Navbar() {
   return (
@@ -39,6 +40,7 @@ export default function Navbar() {
             </li>
           </ul>
         </div>
+        <CartCount />
       </div>
     </nav>
   );
