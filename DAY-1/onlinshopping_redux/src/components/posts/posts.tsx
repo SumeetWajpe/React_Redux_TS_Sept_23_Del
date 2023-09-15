@@ -10,11 +10,14 @@ type PostsState = {
 };
 
 const Posts: React.FC = () => {
-  const posts = useSelector((store: AppState) => store.posts);
+  const postsData = useSelector((store: AppState) => store.posts);
   let dispatch = useDispatch<AppDispatch>();
   useEffect(() => {
     dispatch(fetchposts());
   }, []);
+
+  if (postsData.error)
+    return <strong style={{ color: "red" }}>{postsData.error}</strong>;
   return (
     <>
       <div>
@@ -22,16 +25,19 @@ const Posts: React.FC = () => {
           <h1>All Posts</h1>
         </header>
         <main>
-          {posts.length > 0 ? (
+          {postsData.isLoading == false ? (
             <ul className="list-group">
-              {posts.map((post: PostModel) => (
+              {postsData.posts.map((post: PostModel) => (
                 <li key={post.id} className="list-group-item">
                   <Link to={`/postdetails/${post.id}`}> {post.title}</Link>
                 </li>
               ))}
             </ul>
           ) : (
-            "Loading.."
+            <img
+              src="https://miro.medium.com/v2/resize:fit:1400/1*CsJ05WEGfunYMLGfsT2sXA.gif"
+              alt="Loading.."
+            />
           )}
         </main>
       </div>
